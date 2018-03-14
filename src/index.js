@@ -175,7 +175,7 @@ function run() {
     }
 
     percentage() {
-      let errors = Matrix.divide(predicted, this.labels)
+      let errors = Matrix.divide(this.predicted, this.labels)
       // errors = Matrix.map(errors, Math.abs);
       // errors = Matrix.divide(errors, actual);
       let tot = 0
@@ -208,13 +208,12 @@ function run() {
 
   console.time("TRAINING_TIME")
   network.train(trainingData, trainingLabels, {
-    batchSize: 4,
-    noOfIterations: 500,
+    batchSize: 32,
+    noOfIterations: 150,
     momentum: 0.9,
     learningRate: 1.3,
   })
   console.timeEnd("TRAINING_TIME")
-  console.log(JSON.stringify(network.toJSON()))
   // return
 
   const after = network.classify(testData)
