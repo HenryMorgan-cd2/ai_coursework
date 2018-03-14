@@ -1,0 +1,107 @@
+%% Latex Template for Final Year Projects
+%% School of Science, Computer Science Department
+%% Loughborough University
+%% Prepared by Andrea Soltoggio, 2016
+%% Updated 2017
+
+\documentclass[12pt,oneside,a4paper,bibliography=totoc]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{tocbibind}
+\usepackage{enumitem}
+
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true}
+% \usepackage[margin=1in]{geometry}
+\urlstyle{same}
+\usepackage{booktabs}
+
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.5}
+
+\renewcommand{\baselinestretch}{1.15}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\name} {Henry Morgan}
+\newcommand*{\bnumber} {B526505}
+\newcommand*{\projectTitle} {Nice Template}
+
+% Create the command for including the title page with \makeTatlePage command
+\newcommand*{\makeTitlePage}{
+
+\begingroup
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\textwidth]{lboro_logo.png}
+\end{figure}
+
+\centering
+
+\vspace*{2cm}
+
+%\rule{\textwidth}{0.4pt}\\
+\vspace{1cm}
+
+{\Huge \projectTitle }\\
+\vspace{0.5cm}
+% {\LARGE Its uses in the music industry }\\
+
+%\rule{\textwidth}{0.4pt}
+
+\vspace*{2cm}
+
+{\LARGE by \name \\
+\Large Student ID: \bnumber\\\vspace{0.5cm}
+\LARGE Loughborough University \\ }
+
+\vspace*{3cm}
+
+{\large 17COC131: Data Mining \\\vspace{0.4cm}
+ Lecturer: P W H Chung \\ }
+
+{\scshape Submitted 13$^{th}$ March 2018}
+
+\newpage
+
+\endgroup}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\pagestyle{empty} % Removes page numbers
+
+\makeTitlePage % This command includes the title page
+
+\tableofcontents
+
+\newpage
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\lhead{\projectTitle}
+\rhead{\name}
+
+%%%%%%%%%%%%%%%%%%% BODY %%%%%%%%%%%%%%%%%%%%%%%
+
+\input{body}
+
+%%%%%%%%%%%%%%%%%%% END BODY %%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
+

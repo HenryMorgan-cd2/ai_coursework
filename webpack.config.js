@@ -13,6 +13,11 @@ module.exports = {
     contentBase: "./build",
     hot: true,
   },
+  resolve: {
+    alias: {
+      network: path.resolve(__dirname, "src/network/src/network"),
+    },
+  },
   target: "node",
   module: {
     loaders: [
